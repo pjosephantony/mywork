@@ -17,9 +17,9 @@ var express              = require("express"),
 
 
 
-
-mongoose.connect("mongodb://josephantony:joseph123@ds129600.mlab.com:29600/bookreview");
-//mongoose.connect("mongodb://localhost/bookreview"); 
+//console.log(process.env.DATABASEURL);
+//mongoose.connect("mongodb://josephantony:joseph123@ds129600.mlab.com:29600/bookreview");
+mongoose.connect("process.env.DATABASEURL"); 
 //mongodb://josephantony:joseph123@ds129600.mlab.com:29600/bookreview
 app.use(express.static(__dirname + "/public"));
 app.use(bodyParser.urlencoded({extended: true}));
