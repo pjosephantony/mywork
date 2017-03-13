@@ -6,7 +6,6 @@ var express              = require("express"),
     User                 = require("./models/user"), 
     Book                 = require("./models/books"),
     Comment              = require("./models/comments"),
-    seedDB               = require("./seeds"),
     methodOverride		 = require("method-override"),
     flash                = require("connect-flash"),
     bodyParser           = require("body-parser");
@@ -55,10 +54,6 @@ app.use(function(req, res, next){
 app.use(commentRoutes);
 app.use(bookRoutes);
 app.use(authRoutes);
-
-
-//seedDB();
-
 
 app.listen("3000", function(){
 	console.log("Server Started");
