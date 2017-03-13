@@ -17,9 +17,9 @@ var express              = require("express"),
 
 
 //mongoose.connect("mongodb://localhost/bookreview");
-console.log(process.env.DATABASEURL);
-console.log(process.env.PORT);
-console.log(process.env.IP);
+// console.log(process.env.DATABASEURL);
+// console.log(process.env.PORT);
+// console.log(process.env.IP);
 //mongoose.connect("mongodb://josephantony:joseph123@ds129600.mlab.com:29600/bookreview");
 mongoose.connect(process.env.DATABASEURL); 
 //mongodb://josephantony:joseph123@ds129600.mlab.com:29600/bookreview
