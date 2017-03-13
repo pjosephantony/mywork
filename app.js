@@ -19,7 +19,9 @@ var express              = require("express"),
 
 
 
-mongoose.connect("mongodb://localhost/bookreview"); 
+mongoose.connect("mongodb://josephantony:joseph123@ds129600.mlab.com:29600/bookreview");
+//mongoose.connect("mongodb://localhost/bookreview"); 
+//mongodb://josephantony:joseph123@ds129600.mlab.com:29600/bookreview
 app.use(express.static(__dirname + "/public"));
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
