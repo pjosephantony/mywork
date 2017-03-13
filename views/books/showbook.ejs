@@ -1,0 +1,57 @@
+<% include ../partials/header %>
+
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-3">
+			<p class="lead">Book Review</p>
+			<div class="list-group">
+				<li class="list-group-item active">Info 1</li>
+				<li class="list-group-item">Info 2</li>
+				<li class="list-group-item">Info 3</li>
+			</div>
+		</div>
+		<div class="col-md-9">
+			<div class="thumbnail">
+				<img src="<%= book.image %>" class="img-responsive">
+				<div class="caption-full">
+					<h4 class="pull-right">$<%= book.price %></h4>
+					<h4><%= book.name %></h4>
+					<p><em>Submitted by <%= book.user.username %></em></p>
+					<p><%= book.review %></p>
+					<% if(user && book.user.id.equals(user._id)){ %>
+						<a class="btn btn-warning" href="/books/<%= book._id %>/edit">Edit</a>
+						<form id="book-delete" method="post" action="/books/<%= book._id %>?_method=DELETE">
+							<button class="btn btn-danger">Delete</button>
+						</form>
+					<% } %>				
+				</div>
+			</div>
+			<div class="well">
+				<div class="text-right">
+					<a class="btn btn-success" href="/books/<%= book._id %>/comments/new">Add a Comment</a>
+				</div>
+				<hr>
+				<% book.comments.forEach(function(comment){ %>
+				<div class="row">
+					<div class="col-md-12">
+						<strong><%= comment.author.username %></strong>
+						<span class="pull-right">7 days ago</span>
+						<p><%= comment.text %></p>
+						<% if(user && comment.author.id.equals(user._id)){ %>
+							<a class="btn btn-xs btn-warning" href="/books/<%= book._id %>/comments/<%= comment._id %>/edit">Edit</a>
+							<form id="book-delete" action="/books/<%= book._id %>/comments/<%= comment._id %>?_method=DELETE" method="post">
+								<button class="btn btn-xs btn-danger">Delete</button>
+							</form>
+						<% } %>
+					</div>
+				</div>
+				<% }); %>
+
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<% include ../partials/footer %>
