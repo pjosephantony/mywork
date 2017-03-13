@@ -16,11 +16,16 @@ var express              = require("express"),
      authRoutes      = require("./routes/authroutes");
 
 
-
-//console.log(process.env.DATABASEURL);
+//mongoose.connect("mongodb://localhost/bookreview");
+console.log(process.env.DATABASEURL);
+console.log(process.env.PORT);
+console.log(process.env.IP);
 //mongoose.connect("mongodb://josephantony:joseph123@ds129600.mlab.com:29600/bookreview");
-mongoose.connect("process.env.DATABASEURL"); 
+mongoose.connect(process.env.DATABASEURL); 
 //mongodb://josephantony:joseph123@ds129600.mlab.com:29600/bookreview
+
+
+
 app.use(express.static(__dirname + "/public"));
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
@@ -58,3 +63,7 @@ app.use(authRoutes);
 app.listen(process.env.PORT, process.env.IP, function(){
 	console.log("Server Started");
 });
+
+// app.listen("3000", function(){
+//     console.log("Server Started");
+// })
