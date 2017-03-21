@@ -1,12 +1,57 @@
 <% include ../partials/header %>
 
 
+
+
 <div class="container">
 
 	<div class="row">
 		<h1 style="text-align: center">Edit <%= book.name %></h1>
 		<!-- <div style="width: 30%; margin: 30px auto;"> -->
-		<div class="form-align">
+		
+			<form action="/books/<%= book._id %>?_method=PUT" method="post">
+
+				<div class="col-md-5">
+					<div class="form-special-align">
+						<div class="form-group">
+							<input class="form-control" type="text" placeholder="Book title" name="book[name]" value="<%= book.name %>">
+						</div>
+						<div class="form-group">
+							<input class="form-control" type="text" placeholder="Image Url" name="book[image]" value="<%= book.image %>">
+						</div>
+						<div class="form-group">
+							<input class="form-control" type="text" placeholder="Author Name" name="book[author]" value="<%= book.author %>">
+						</div>
+						<div class="form-group">
+							<input class="form-control" type="text" placeholder="Genre" name="book[genre]" value="<%= book.genre %>">
+						</div>
+						<div class="form-group">
+							<input class="form-control" type="number" placeholder="price" name="book[price]" min="1" step="0.01" value="<%= book.price %>">
+						</div>
+					</div>
+				</div>
+				<div class="col-md-7 form-special-align">
+					<div class="form-group">
+						<textarea style="height: 232px" class="form-control" type="text" placeholder="Type your review here" name="book[review]"><%= book.review %></textarea>
+					</div>	
+				</div>
+				
+				<div class="form-group form-align">
+					<input class="btn-primary btn-block btn btn-lg btn-default" type="submit" value="Edit Book">
+				</div>
+			</form>
+			<a class="btn btn-info" href="/books">Back to Books</a>
+	</div>
+</div>
+
+
+
+<!-- <div class="container">
+
+	<div class="row">
+		<h1 style="text-align: center">Edit <%= book.name %></h1>
+ -->		<!-- <div style="width: 30%; margin: 30px auto;"> -->
+<!-- 		<div class="form-align">
 			<form action="/books/<%= book._id %>?_method=PUT" method="post">
 				<div class="form-group">
 					<input class="form-control" type="text" name="book[name]" value="<%= book.name %>">
@@ -38,5 +83,5 @@
 
 	</div>
 </div>
-
+ -->
 <% include ../partials/footer %>
