@@ -16,12 +16,12 @@ var express              = require("express"),
      authRoutes      = require("./routes/authroutes");
 
 
-mongoose.connect("mongodb://localhost/bookreview");
+//mongoose.connect("mongodb://localhost/bookreview");
 //console.log(process.env.DATABASEURL);
 // console.log(process.env.PORT);
 // console.log(process.env.IP);
 //mongoose.connect("mongodb://josephantony:joseph123@ds129600.mlab.com:29600/bookreview");
-//mongoose.connect(process.env.DATABASEURL); 
+mongoose.connect(process.env.DATABASEURL); 
 //mongodb://josephantony:joseph123@ds129600.mlab.com:29600/bookreview
 
 
@@ -60,10 +60,10 @@ app.use(commentRoutes);
 app.use(bookRoutes);
 app.use(authRoutes);
 
-// app.listen(process.env.PORT, process.env.IP, function(){
-// 	console.log("Server Started");
-// });
+app.listen(process.env.PORT, process.env.IP, function(){
+	console.log("Server Started");
+});
 
-app.listen("3000", function(){
-    console.log("Server Started");
-})
+// app.listen("3000", function(){
+//     console.log("Server Started");
+// })
