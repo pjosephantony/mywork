@@ -71,7 +71,7 @@ router.delete("/books/:id/comments/:comment_id", middleware.checkCommentPermissi
 		if(err){
 			res.redirect("back");
 		} else {
-			req.flash("success", "Comment deleted successfully");
+			//req.flash("success", "Comment deleted successfully");
 			res.redirect("/books/"+req.params.id);
 		}
 	})

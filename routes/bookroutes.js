@@ -41,7 +41,7 @@ router.get("/books/:id", function(req, res){
 		if(err){
 			console.log(err);
 		}else{
-			console.log(book);
+			//console.log(book);
 			res.render("books/showbook", {book: book});		
 		}
 	});

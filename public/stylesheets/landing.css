@@ -45,7 +45,7 @@ body {
   background-image: url(https://images.pexels.com/photos/110252/pexels-photo-110252.jpeg?h=350&auto=compress&cs=tinysrgb) 
 }
 .slideshow li:nth-child(2) { 
-  background-image: url(https://cdn.pixabay.com/photo/2016/11/18/16/49/books-1835753_960_720.jpg);
+  background-image: url(https://cdn.pixabay.com/photo/2014/10/14/20/14/library-488677__340.jpg);
   animation-delay: 7s; 
 }
 .slideshow li:nth-child(3) { 
