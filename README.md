@@ -5,7 +5,4 @@ A website where users can post reviews about the books they have read. Authentic
 
 Technologies used - Node.js, Express.js, several npm packages, MongoDB, HTML, CSS, JavaScript, jQuery, Bootstrap, EJS
 
-## Branch - documentsearch
-A java swing application which implements a document search solution for various documents type. The application makes use of Apache lucene to implement document search capability. Search can be performed on files of type docx, txt, html, xml, pdf, and json.
 
-Technologies used - Java, Java swing, apache lucene 6.6.0
